@@ -30,21 +30,17 @@
     "
     type="text" name="" id="speechToText" placeholder="اضغط ثم تحدث" onclick="record()">
 
-
-    <!-- Below is the script for voice recognition and conversion to text-->
     <script>
         function record() {
             var recognition = new webkitSpeechRecognition();
             recognition.lang = "ar-SA";
 
             recognition.onresult = function(event) {
-                // console.log(event);
                 document.getElementById('speechToText').value = event.results[0][0].transcript;
             }
             recognition.start();
 
         }
     </script>
-    <!-- end of script -->
 </body>
 </html>
